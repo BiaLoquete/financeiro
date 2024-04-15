@@ -1,0 +1,29 @@
+create table usuario (
+id int auto_increment primary key,
+nome varchar (254) not null,
+email varchar (254) not null,
+senha varchar (254) not null
+);
+
+create table despesa (
+id int auto_increment primary key,
+usuario_id int,
+descricao varchar (254) not null,
+valor decimal (10,2) not null,
+foreign key (usuario_id) references usuario(id)
+);
+
+create table receita (
+id int auto_increment primary key,
+usuario_id int,
+descricao varchar (254) not null,
+valor decimal (10,2) not null,
+foreign key (usuario_id) references usuario(id)
+);
+
+alter table usuario
+add column cpf varchar (254) not null;
+
+select * from usuario;
+select * from receita;
+select * from despesa;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <div class="messages">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="{{ url_for('entrar') }}" method="post" class="inp">
+        <input class="inputt" type="text" name="cpf" placeholder="Informe seu CPF" required><br>
+        <input class="inputt" type="password" name="senha" placeholder="Informe sua senha" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Não tem uma conta? <a href="http://127.0.0.1:5000/cadastro">Cadastre-se</a></p>
+</div>
+</body>
+</html>

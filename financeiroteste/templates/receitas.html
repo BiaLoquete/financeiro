@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Principal</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="headerprincipal">
+                <button class="card">
+                    <h4 class="despesa">Despesas</h4>
+                    <h3 class="valordespesa">R$00,00</h3>
+                </button>
+
+               <button class="card">
+                    <h4 class="receita">Receitas</h4>
+                    <h3 class="valorreceita">R$00,00</h3>
+                </button>
+
+                <a href=http://127.0.0.1:8080/principal>
+                    <button class="relatorio">
+                        <span class="relatorioh4">Relatórios</span>
+                    </button>
+                </a>
+
+                 <div>
+                <h3>Acesso rápido</h3>
+                 <a href="http://127.0.0.1:5000/receita">
+                        <button>+</button>
+                    </a>
+                 <a href="http://127.0.0.1:5000/despesa">
+                        <button>-</button>
+                    </a>
+            </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <div class="SaldoEimg">
+
+        <div class="imgPrincipal">
+            <img  src="../static/logo.png">
+        </div>
+        <div class="divSaldoGeral">
+           <div class="divpaiReceitas">
+            <div class="inputReceitas">
+                <form action="{{ url_for('receita') }}" method="post">
+                    <input class="inputRec" type="text" name="descricao" placeholder="Descrição da receita" required>
+                    <input class="inputRec" type="number" name="valor" placeholder="Valor" required>
+                    <button class="bttRec type="submit">Adicionar Receita</button>
+                </form>
+            </div>
+
+           </div>
+           <img class="LinhaCard" src="../static/linha.png">
+        </div>
+
+    </div>
+</body>
+</html>
